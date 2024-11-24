@@ -25,7 +25,7 @@ const WorkCard = ({ img, name, description, onClick, skills }) => {
           {description ? description : "Description"}
         </h2>
         <h3 className={`pt-3 flex text-2xl gap-3 items-center justify-end w-fit`}>
-          {skills?.map((skill) => <span title={skill.fields.name} className={`flex py-1 px-2 rounded-md bg-white`}>
+          {skills?.map((skill) => <span key={skill.fields.name} title={skill.fields.name} className={`flex py-1 px-2 rounded-md bg-white`}>
             <img
               className="h-8 w-8 filter"
               src={skill.fields.icon.fields.file.url}
