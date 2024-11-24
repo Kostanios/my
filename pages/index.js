@@ -75,8 +75,6 @@ export default function Home({
     );
   }, []);
 
-  console.log(projects)
-
   const emailLink = contacts?.items.find(contact => contact.fields.title === 'email')?.fields.link;
 
   return (
@@ -131,7 +129,7 @@ export default function Home({
           <h1 className="text-2xl text-bold">Work.</h1>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
-            {projects.items.map(({ fields: project }) => (
+            {projects.items.sort((a,b) => b.fields.order - a.fields.order).map(({ fields: project }) => (
               <WorkCard
                 key={project.id}
                 img={project.preview.fields.file.url}
