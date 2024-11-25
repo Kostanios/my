@@ -149,7 +149,7 @@ export default function Home({
               <ServiceCard
                 key={index}
                 name={service.fields.name}
-                description={service.description}
+                description={service.fields.description}
               />
             ))}
           </div>
